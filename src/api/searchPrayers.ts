@@ -4,6 +4,25 @@ import { resolveLanguage, toPrayerSummary } from '../data/resolve.js';
 
 const DEFAULT_LIMIT = 20;
 
+/**
+ * Searches the corpus for prayers whose title, author, or source title
+ * contains the given query (case-insensitive substring match).
+ *
+ * @param query - Search string. Empty / whitespace-only queries return `[]`.
+ * @param options.language - `'en'` (default) or `'am'`.
+ * @param options.limit - Maximum results (default 20). Must be a positive integer.
+ * @returns Array of {@link PrayerSummary}, in corpus order, capped at `limit`.
+ *
+ * @throws If `language` is invalid.
+ * @throws If `limit` is not a positive integer.
+ *
+ * @example
+ * ```ts
+ * searchPrayers('Gerhard');                       // up to 20 by Johann Gerhard
+ * searchPrayers('confession', { limit: 5 });
+ * searchPrayers('ጸሎት', { language: 'am' });
+ * ```
+ */
 export function searchPrayers(query: string, options?: SearchOptions): PrayerSummary[] {
   const trimmed = query.trim().toLowerCase();
   if (trimmed.length === 0) return [];

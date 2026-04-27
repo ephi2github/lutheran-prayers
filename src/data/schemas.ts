@@ -9,11 +9,6 @@ const localizedString = z.object({
   am: z.string().min(1),
 });
 
-const localizedStringNullable = z.object({
-  en: z.string().nullable(),
-  am: z.string().nullable(),
-});
-
 export const sourceCategorySchema = z.object({
   id: z.string().regex(/^[a-z0-9_]+$/, 'category id must be lowercase snake_case'),
   name: localizedString,

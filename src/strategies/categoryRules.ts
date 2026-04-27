@@ -124,10 +124,34 @@ const MONDAY: Slot[] = [
   { kind: 'category', id: 'meditation_prayer_fragment' },
 ];
 
+const MONDAY_FEAST: Slot[] = [
+  { kind: 'exact_season' },
+  { kind: 'family_fallback' },
+  { kind: 'category', id: 'daily' },
+  { kind: 'category', id: 'general' },
+  { kind: 'category', id: 'intercession' },
+  { kind: 'category', id: 'thanksgiving' },
+  { kind: 'category', id: 'confession' },
+  { kind: 'category', id: 'children' },
+  { kind: 'category', id: 'meditation_prayer_fragment' },
+];
+
 const TUESDAY: Slot[] = [
   { kind: 'category', id: 'general' },
   { kind: 'exact_season' },
   { kind: 'family_fallback' },
+  { kind: 'category', id: 'intercession' },
+  { kind: 'category', id: 'daily' },
+  { kind: 'category', id: 'thanksgiving' },
+  { kind: 'category', id: 'confession' },
+  { kind: 'category', id: 'children' },
+  { kind: 'category', id: 'meditation_prayer_fragment' },
+];
+
+const TUESDAY_FEAST: Slot[] = [
+  { kind: 'exact_season' },
+  { kind: 'family_fallback' },
+  { kind: 'category', id: 'general' },
   { kind: 'category', id: 'intercession' },
   { kind: 'category', id: 'daily' },
   { kind: 'category', id: 'thanksgiving' },
@@ -150,8 +174,8 @@ const WEDNESDAY_BASE: Slot[] = [
 
 const WEDNESDAY_FEAST: Slot[] = [
   { kind: 'exact_season' },
-  { kind: 'category', id: 'confession' },
   { kind: 'family_fallback' },
+  { kind: 'category', id: 'confession' },
   { kind: 'category', id: 'general' },
   { kind: 'category', id: 'daily' },
   { kind: 'category', id: 'thanksgiving' },
@@ -164,6 +188,18 @@ const THURSDAY: Slot[] = [
   { kind: 'category', id: 'thanksgiving' },
   { kind: 'exact_season' },
   { kind: 'family_fallback' },
+  { kind: 'category', id: 'general' },
+  { kind: 'category', id: 'daily' },
+  { kind: 'category', id: 'intercession' },
+  { kind: 'category', id: 'confession' },
+  { kind: 'category', id: 'children' },
+  { kind: 'category', id: 'meditation_prayer_fragment' },
+];
+
+const THURSDAY_FEAST: Slot[] = [
+  { kind: 'exact_season' },
+  { kind: 'family_fallback' },
+  { kind: 'category', id: 'thanksgiving' },
   { kind: 'category', id: 'general' },
   { kind: 'category', id: 'daily' },
   { kind: 'category', id: 'intercession' },
@@ -196,18 +232,33 @@ const SATURDAY: Slot[] = [
   { kind: 'category', id: 'meditation_prayer_fragment' },
 ];
 
+const SATURDAY_FEAST: Slot[] = [
+  { kind: 'exact_season' },
+  { kind: 'family_fallback' },
+  { kind: 'category', id: 'general' },
+  { kind: 'category', id: 'intercession' },
+  { kind: 'category', id: 'daily' },
+  { kind: 'category', id: 'thanksgiving' },
+  { kind: 'category', id: 'confession' },
+  { kind: 'category', id: 'children' },
+  { kind: 'category', id: 'meditation_prayer_fragment' },
+];
+
 function pickSlots(weekday: Weekday, ctx: DayContext): Slot[] {
+  // Sunday and Friday already lead with exact_season; the principal-feast rule
+  // is satisfied by their default lists.
   if (weekday === 0) return SUNDAY;
-  if (weekday === 1) return MONDAY;
-  if (weekday === 2) return TUESDAY;
-  if (weekday === 3) {
-    if (ctx.seasonKey === 'advent' || ctx.seasonKey === 'lent') return WEDNESDAY_BASE;
-    if (ctx.isPrincipalFeast) return WEDNESDAY_FEAST;
-    return WEDNESDAY_BASE;
-  }
-  if (weekday === 4) return THURSDAY;
   if (weekday === 5) return FRIDAY;
-  return SATURDAY;
+
+  if (weekday === 1) return ctx.isPrincipalFeast ? MONDAY_FEAST : MONDAY;
+  if (weekday === 2) return ctx.isPrincipalFeast ? TUESDAY_FEAST : TUESDAY;
+  if (weekday === 3) {
+    // Advent/Lent: confession leads even on principal feasts.
+    if (ctx.seasonKey === 'advent' || ctx.seasonKey === 'lent') return WEDNESDAY_BASE;
+    return ctx.isPrincipalFeast ? WEDNESDAY_FEAST : WEDNESDAY_BASE;
+  }
+  if (weekday === 4) return ctx.isPrincipalFeast ? THURSDAY_FEAST : THURSDAY;
+  return ctx.isPrincipalFeast ? SATURDAY_FEAST : SATURDAY;
 }
 
 function slotMatches(slot: Slot, categoryId: string, ctx: DayContext): boolean {

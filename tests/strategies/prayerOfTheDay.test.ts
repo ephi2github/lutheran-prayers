@@ -138,4 +138,19 @@ describe('selectPrayerOfTheDay — strategy invariants over a full liturgical ye
       /precedes the supported range/,
     );
   });
+
+  it.each<[string, YMD, string]>([
+    ['Timket 2026 (Mon principal feast)', { year: 2026, month: 1, day: 19 }, 'epiphany'],
+    ['Erget 2026 (Thu principal feast)', { year: 2026, month: 5, day: 21 }, 'ascension'],
+    ['Genna 2026 (Wed principal feast)', { year: 2026, month: 1, day: 7 }, 'christmas'],
+    ['Hosanna 2026 (Sun principal feast)', { year: 2026, month: 4, day: 5 }, 'lent'],
+    ['Fasika 2026 (Sun principal feast)', { year: 2026, month: 4, day: 12 }, 'easter'],
+  ])(
+    'principal-feast rule: %s picks an exact-season prayer',
+    (_label, date, expectedCategory) => {
+      _resetScheduler();
+      const prayer = selectPrayerOfTheDay(date);
+      expect(prayer.categoryId).toBe(expectedCategory);
+    },
+  );
 });
