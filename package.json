@@ -1,0 +1,57 @@
+{
+  "name": "lutheran-prayers",
+  "version": "0.0.0",
+  "description": "Offline-first, bilingual (English/Amharic) corpus of confessional Lutheran prayers, exposed via a small synchronous TypeScript API.",
+  "keywords": [
+    "lutheran",
+    "prayers",
+    "liturgy",
+    "amharic",
+    "offline",
+    "devotional"
+  ],
+  "author": "Ephrem K. Getachew <ephigetachek@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ephi2github/lutheran-prayers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ephi2github/lutheran-prayers/issues"
+  },
+  "homepage": "https://github.com/ephi2github/lutheran-prayers#readme",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "validate:data": "tsx scripts/validate-data.ts",
+    "build:data": "tsx scripts/build-data.ts",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}
