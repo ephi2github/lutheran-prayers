@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      kenat:
+        specifier: ^3.2.0
+        version: 3.2.0
     devDependencies:
       '@types/node':
         specifier: ^22.10.2
@@ -906,6 +910,9 @@ packages:
 
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
+
+  kenat@3.2.0:
+    resolution: {integrity: sha512-u8Vkny8QiarSJ3jNMGSt+OfC5mhsDr06fF6mlOLhQpXCIqBs487lK+EH3UiNIj2u2/KEHHFqekPeeWSEW0OktA==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -2026,6 +2033,8 @@ snapshots:
   json-schema-traverse@0.4.1: {}
 
   json-stable-stringify-without-jsonify@1.0.1: {}
+
+  kenat@3.2.0: {}
 
   keyv@4.5.4:
     dependencies:

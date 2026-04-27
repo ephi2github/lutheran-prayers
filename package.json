@@ -1,6 +1,6 @@
 {
   "name": "lutheran-prayers",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Offline-first, bilingual (English/Amharic) corpus of confessional Lutheran prayers, exposed via a small synchronous TypeScript API.",
   "keywords": [
     "lutheran",
@@ -64,5 +64,8 @@
   "packageManager": "pnpm@9.15.9",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "kenat": "^3.2.0"
   }
 }
