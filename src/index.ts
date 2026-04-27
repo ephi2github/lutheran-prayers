@@ -1,6 +1,7 @@
 export type {
   Language,
   Prayer,
+  PrayerAttribution,
   PrayerSummary,
   Category,
   LanguageOption,

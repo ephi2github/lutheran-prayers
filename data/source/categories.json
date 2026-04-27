@@ -1,0 +1,150 @@
+[
+  {
+    "id": "advent",
+    "name": { "en": "Advent", "am": "አድቬንት (የመጻት ወቅት)" },
+    "description": {
+      "en": "The four-week preparation for Christmas, awaiting the coming of Christ.",
+      "am": "ለልደት የሚደረግ የአራት ሳምንት ዝግጅት፣ የክርስቶስን ምጽአት መጠባበቅ።"
+    }
+  },
+  {
+    "id": "after_easter",
+    "name": { "en": "After Easter", "am": "ከትንሣኤ በኋላ" },
+    "description": {
+      "en": "Sundays in the Easter season, between Easter and the Ascension.",
+      "am": "በትንሣኤ ወቅት የሚገኙ እሁዶች፣ ከትንሣኤ እስከ ዕርገት ድረስ።"
+    }
+  },
+  {
+    "id": "after_epiphany",
+    "name": { "en": "After Epiphany", "am": "ከጥምቀት በኋላ" },
+    "description": {
+      "en": "Sundays following the Feast of the Epiphany.",
+      "am": "ከጥምቀት በዓል በኋላ የሚገኙ እሁዶች።"
+    }
+  },
+  {
+    "id": "after_new_year",
+    "name": { "en": "After New Year", "am": "ከአዲስ ዓመት በኋላ" }
+  },
+  {
+    "id": "after_trinity",
+    "name": { "en": "After Trinity", "am": "ከሥላሴ በኋላ" },
+    "description": {
+      "en": "Sundays after Trinity Sunday — the longest stretch of the church year.",
+      "am": "ከሥላሴ እሁድ በኋላ የሚገኙ እሁዶች — በቤተ ክርስቲያን ዓመት ውስጥ ረጅሙ ክፍል።"
+    }
+  },
+  {
+    "id": "ascension",
+    "name": { "en": "Ascension", "am": "ዕርገት" },
+    "description": {
+      "en": "The Feast of the Ascension of Our Lord.",
+      "am": "የጌታችን የዕርገት በዓል።"
+    }
+  },
+  {
+    "id": "baptism",
+    "name": { "en": "Baptism", "am": "ጥምቀት" }
+  },
+  {
+    "id": "children",
+    "name": { "en": "For Children", "am": "ለሕፃናት" }
+  },
+  {
+    "id": "christmas",
+    "name": { "en": "Christmas", "am": "ልደት" },
+    "description": {
+      "en": "The Feast of the Nativity of Our Lord.",
+      "am": "የጌታችን የልደት በዓል።"
+    }
+  },
+  {
+    "id": "church_attendance",
+    "name": { "en": "For Worship", "am": "ቤተ ክርስቲያን መሄድ" }
+  },
+  {
+    "id": "confession",
+    "name": { "en": "Confession of Sins", "am": "ንስሐ (የኃጢአት መናዘዝ)" }
+  },
+  {
+    "id": "daily",
+    "name": { "en": "Daily Prayer", "am": "ዕለታዊ" }
+  },
+  {
+    "id": "deathbed",
+    "name": { "en": "At the Hour of Death", "am": "ሞት አፋፍ" }
+  },
+  {
+    "id": "easter",
+    "name": { "en": "Easter", "am": "ትንሣኤ" },
+    "description": {
+      "en": "The Feast of the Resurrection of Our Lord.",
+      "am": "የጌታችን የትንሣኤ በዓል።"
+    }
+  },
+  {
+    "id": "epiphany",
+    "name": { "en": "Epiphany", "am": "ጥምቀት" }
+  },
+  {
+    "id": "festival_days_general",
+    "name": { "en": "Festival Days (General)", "am": "አጠቃላይ የበዓላት ቀናት" }
+  },
+  {
+    "id": "general",
+    "name": { "en": "General", "am": "አጠቃላይ" }
+  },
+  {
+    "id": "intercession",
+    "name": { "en": "Intercession", "am": "ምልጃ" }
+  },
+  {
+    "id": "lent",
+    "name": { "en": "Lent", "am": "ጾመ ሁዳዴ" },
+    "description": {
+      "en": "The forty-day fast preceding Easter.",
+      "am": "ከትንሣኤ በፊት የሚደረግ የአርባ ቀን ጾም።"
+    }
+  },
+  {
+    "id": "meditation_prayer_fragment",
+    "name": { "en": "Meditations and Prayer Fragments", "am": "አጭር ጸሎቶችና ማሰላሰሎች" }
+  },
+  {
+    "id": "motherhood",
+    "name": { "en": "For Mothers", "am": "እናቶች" }
+  },
+  {
+    "id": "new_year",
+    "name": { "en": "New Year", "am": "አዲስ ዓመት" }
+  },
+  {
+    "id": "preparatory",
+    "name": { "en": "Preparation for Communion", "am": "ቅድመ ዝግጅት" }
+  },
+  {
+    "id": "sick",
+    "name": { "en": "For the Sick", "am": "ሕመም" }
+  },
+  {
+    "id": "table",
+    "name": { "en": "At Table", "am": "ማዕድ" }
+  },
+  {
+    "id": "thanksgiving",
+    "name": { "en": "Thanksgiving", "am": "ምስጋና" }
+  },
+  {
+    "id": "trinity",
+    "name": { "en": "Trinity Sunday", "am": "ሥላሴ" }
+  },
+  {
+    "id": "whitsuntide",
+    "name": { "en": "Whitsuntide", "am": "ጰራቅሊጦስ (በዓለ ሃምሳ)" },
+    "description": {
+      "en": "The week of Pentecost — celebrating the descent of the Holy Spirit.",
+      "am": "የጰራቅሊጦስ ሳምንት — የመንፈስ ቅዱስ መውረድ መታሰቢያ።"
+    }
+  }
+]
