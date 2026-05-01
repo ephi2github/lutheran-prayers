@@ -1,6 +1,6 @@
 {
   "name": "lutheran-prayers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Offline-first, bilingual (English/Amharic) corpus of 411 confessional Lutheran prayers with an Ethiopian-calendar-anchored prayer-of-the-day scheduler.",
   "keywords": [
     "lutheran",
@@ -51,7 +51,8 @@
     "validate:data": "tsx scripts/validate-data.ts",
     "build:data": "tsx scripts/build-data.ts",
     "build": "tsup",
-    "test": "vitest run",
+    "prepack": "tsup",
+    "test": "tsup && vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",

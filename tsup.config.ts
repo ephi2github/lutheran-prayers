@@ -10,4 +10,6 @@ export default defineConfig({
   target: 'es2022',
   treeshake: true,
   splitting: false,
+  // kenat is ESM-only; inline it so the generated CJS export can be required.
+  noExternal: ['kenat'],
 });

@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-05-01
+
+### Changed
+- Updated `data/source/prayers_am.json` — substantive corrections and completions across the Amharic prayer corpus; `corpus.json` regenerated.
+
+### Fixed
+- CommonJS consumers can now `require('lutheran-prayers')`. The ESM-only `kenat` dependency is inlined into the CJS bundle (`tsup.config.ts` `noExternal: ['kenat']`).
+
+### Added
+- `tests/package/exports.test.ts` — verifies both ESM `import` and CJS `require` resolution against the built `dist/`.
+- `scripts/get_next_batch.cjs`, `scripts/update_prayer.cjs` — maintainer helpers for batched Amharic-text edits (not published).
+
 ## [1.0.0] - 2026-04-27
 
 First public release.
@@ -49,4 +61,5 @@ First public release.
 - Stubbed public API surface (all functions throwing `NOT_IMPLEMENTED`) to lock the contract early.
 - GitHub Actions CI pipeline.
 
+[1.1.0]: https://github.com/ephi2github/lutheran-prayers/releases/tag/v1.1.0
 [1.0.0]: https://github.com/ephi2github/lutheran-prayers/releases/tag/v1.0.0
