@@ -6,7 +6,8 @@ const requirePackage = createRequire(import.meta.url);
 
 describe('package exports', () => {
   it('loads the ESM export with import()', async () => {
-    const pkg = await import('lutheran-prayers');
+    const moduleName = 'lutheran-prayers';
+    const pkg = (await import(moduleName)) as typeof LutheranPrayers;
     const p = pkg.getPrayerById('P001');
 
     expect(p?.id).toBe('P001');
