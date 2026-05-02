@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-05-02
+
+### Fixed
+- Release CI typecheck failure — `tests/package/exports.test.ts` imported the package by its own name, which `tsc --noEmit` could not resolve in the CI environment (the test relied on the built `dist/`, which only exists at runtime). The test now resolves the built entrypoints via filesystem path, so typecheck passes without depending on a pre-built `dist/`. v1.1.0 was tagged but never reached npm; this is the first published 1.1.x release.
+
 ## [1.1.0] - 2026-05-01
 
 ### Changed
@@ -61,5 +66,6 @@ First public release.
 - Stubbed public API surface (all functions throwing `NOT_IMPLEMENTED`) to lock the contract early.
 - GitHub Actions CI pipeline.
 
+[1.1.1]: https://github.com/ephi2github/lutheran-prayers/releases/tag/v1.1.1
 [1.1.0]: https://github.com/ephi2github/lutheran-prayers/releases/tag/v1.1.0
 [1.0.0]: https://github.com/ephi2github/lutheran-prayers/releases/tag/v1.0.0

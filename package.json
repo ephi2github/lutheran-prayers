@@ -1,6 +1,6 @@
 {
   "name": "lutheran-prayers",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Offline-first, bilingual (English/Amharic) corpus of 411 confessional Lutheran prayers with an Ethiopian-calendar-anchored prayer-of-the-day scheduler.",
   "keywords": [
     "lutheran",
